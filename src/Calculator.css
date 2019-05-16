@@ -1,0 +1,163 @@
+
+@import url(https://fonts.googleapis.com/css?family=Libre+Baskerville:400italic);
+
+@CHARSET ISO-8859-1;
+/* Un bon fond */
+html {
+	height: 100%;
+	background: black;
+	background: radial-gradient(circle, #2C2D2E 50%, #212324);
+	background-size: cover;
+}
+
+/* Div principale de la calculette */
+#calculette {
+	/* Taille générale */
+	width : 155px;
+	height: auto;
+  vertical-align : middle;
+	
+	/* Marge */
+	margin 		 : 0px ;
+	padding		 : 10px;
+	padding-bottom : 5px;
+	
+	/* Dégradés pour tout les opérateurs */
+	background : -webkit-gradient(linear, center top, center bottom, from(#4E9BC9), to(#478EB7));
+	background : -webkit-linear-gradient(#4E9BC9, #478EB7);
+	background : -moz-linear-gradient(#4E9BC9, #478EB7);
+	background : -o-linear-gradient(#4E9BC9, #478EB7);
+	background : -ms-linear-gradient(#4E9BC9, #478EB7);
+	background : linear-gradient(#4E9BC9, #478EB7);
+	
+	/* Coin des bordures de l'élément */
+	border-radius : 3px;
+	
+	/* Police */
+	font  : bold 14px Arial, sans-serif;
+	color : #888;
+	
+	/* Effet 3D */
+	box-shadow : 0px 5px 5px 0px #2A4556;
+}
+
+
+  
+
+
+
+/* Tout les caractères dépassant des touches ou de l'écran doivent être invisibles */
+.touchesCalculette, .enteteCalculette {
+	overflow : hidden;
+}
+
+/* Touches et écran */
+.touchesCalculette button, .enteteCalculette button.reset {
+	position:relative;
+
+	/* Formes générale des touches */
+	float        : left;
+	width        : 35px;
+	height       : 35px;
+	line-height  : 35px;
+	text-align   : center;
+	margin       : 0 5px 5px 0;
+	
+	/* Arrière plan */
+	background  : white;
+	border-radius : 3px;
+	
+	/* Pointeur de souris identiques aux lien hypertextes */
+	cursor: pointer;
+
+	/* Effet 3D */
+	box-shadow: 0px 3px 2px 0px #326682;
+	
+	/* Pas de selection des caractères des touches */
+	-khtml-user-select : none;
+	-webkit-user-select: none;
+	-moz-user-select   : -moz-none;
+	-ms-user-select    : none;
+	user-select        : none;
+
+	/* Flou CSS3 sur toutes les animations */
+	transition        : all 0.2s ease;
+	-webkit-transition: all .2s ease-in;
+    -moz-transition   : all .2s ease-in;
+    -o-transition     : all .2s ease-in;
+}
+
+
+/* Gestion de tout les opérateurs */
+button.operateurs {
+	/* Suppression des marges à droite des touches d'opérateurs */
+	margin-right     : 0px;
+	background-color : #FFE1C1;
+    box-shadow         : 0px 3px 2px 0px #e27c00;
+}
+.touchesCalculette button.egal {
+	background-color : #C4DBC0;
+	box-shadow         : 0px 3px 2px 0px #4C6048;
+}
+
+
+/* Effet de surbrillance au survol de la souris */
+.touchesCalculette button:hover {
+	background-color : #E2E2E2;
+	box-shadow         : 0px 3px 2px 0px #4084A5;
+}
+button.operateurs:hover {
+	background-color : #FFEEC9;
+	box-shadow         : 0px 3px 2px 0px #E07C02;
+}
+.touchesCalculette button.egal:hover {
+	background-color : #DEF7D9;
+	box-shadow         : 0px 3px 2px 0px #8FB587;
+}
+.enteteCalculette button.reset:hover {
+	background-color : #FFADB5;
+	box-shadow         : 0px 3px 2px 0px #DB5962;
+}
+
+/* Simulation de pression de touche quand on active un bouton */
+.touchesCalculette button:active {
+	top: 2px;
+	box-shadow: 0px 1px 2px 0px #2E6077;
+}
+button.operateurs:active {
+	top: 2px;
+	box-shadow: 0px 1px 2px 0px #E07C02;
+}
+.touchesCalculette button.egal:active {
+	top: 2px;
+	box-shadow: 0px 1px 2px 0px #8FB587;
+}
+.enteteCalculette button.reset:active {
+	top: 2px;
+	box-shadow: 0px 1px 2px 0px #DB5962;
+}
+
+/* Si on utilise plusieurs fois la même touche d'opérateur */
+.touchesCalculetteErreur {
+	/* Couleur de base de la touche donc background-color:*/
+	animation: 		   animationError 0.2s infinite alternate;
+	-webkit-animation: animationError 0.2s infinite alternate;
+}
+
+@keyframes animationError {
+	/* 0% = defaud background-color */
+	100% {
+		background-color: #F00;
+		background: radial-gradient(circle, #F00 20%, #ccc);
+		background-size: cover;
+	}
+}
+@-webkit-keyframes animationError {
+	/* 0% = defaud background-color */
+	100% {
+		background-color: #F00;
+		background: radial-gradient(circle, #F00 20%, #ccc);
+		background-size: cover;
+	}
+}
+
